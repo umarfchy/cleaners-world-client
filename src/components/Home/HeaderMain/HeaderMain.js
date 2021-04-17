@@ -5,14 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HeaderMain = () => {
   return (
-    <div>
+    <div className="w-75 mx-auto">
       <main
         style={{ height: "32rem" }}
         className="row d-flex align-items-center"
       >
         <div className="col-md-4 offset-md-1">
           <h1 style={{ color: "#3a4256", fontSize: "2.45rem" }}>
-            Your Clean Workspace <br />
+            <span style={{ color: "lightsalmon" }}>Your Clean Workspace</span>
+            <br />
             Our Promise!
           </h1>
           <p className="text-secondary">

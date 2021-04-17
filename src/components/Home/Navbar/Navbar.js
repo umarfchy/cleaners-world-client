@@ -29,17 +29,12 @@ const Navbar = () => {
             </li>
             <li className="nav-item ms-5">
               <a className="nav-link" href="#">
-                Dental Services
+                Our Services
               </a>
             </li>
             <li className="nav-item ms-5">
               <a className="nav-link" href="#">
                 Reviews
-              </a>
-            </li>
-            <li className="nav-item ms-5">
-              <a className="nav-link" href="#">
-                Blog
               </a>
             </li>
             <li className="nav-item ms-5">
