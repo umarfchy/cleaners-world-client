@@ -12,7 +12,7 @@ const HeaderMain = () => {
       >
         <div className="col-md-4 offset-md-1">
           <h1 style={{ color: "#3a4256", fontSize: "2.45rem" }}>
-            <span style={{ color: "lightsalmon" }}>Your Clean Workspace</span>
+            Your Clean Workspace
             <br />
             Our Promise!
           </h1>
