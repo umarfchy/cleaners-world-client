@@ -9,9 +9,9 @@ const SubscriptionOffer = () => {
   return (
     <div className="d-flex justify-content-center mb-5">
       <div className="w-75">
-        <h3 style={{ textAlign: "center", margin: "2rem 0" }}>
+        <h2 style={{ textAlign: "center", margin: "0 0 3rem 0" }}>
           Subscribe to Our Services
-        </h3>
+        </h2>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}

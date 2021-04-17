@@ -4,7 +4,7 @@ import "./ServiceCard.css";
 const ServiceCard = ({ info }) => {
   return (
     <div
-      class="card CardStyle"
+      class="card serviceCardStyle"
       style={{
         width: "18rem",
       }}

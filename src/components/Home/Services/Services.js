@@ -29,9 +29,9 @@ const Services = () => {
   return (
     <section className="row d-flex justify-content-center mb-5">
       <div className="w-75 row">
-        <h2 style={{ textAlign: "center", margin: "2rem 0" }}>
+        <h3 style={{ textAlign: "center", margin: "2rem 0" }}>
           Services We Provide
-        </h2>
+        </h3>
         {ServiceData.map(info => (
           <ServiceCard info={info}></ServiceCard>
         ))}

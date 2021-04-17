@@ -1,5 +1,4 @@
 import React from "react";
-import BusinessInfo from "../BusinessInfo/BusinessInfo";
 import HeaderMain from "../HeaderMain/HeaderMain";
 import Navbar from "../Navbar/Navbar";
 
@@ -8,7 +7,6 @@ const Header = () => {
     <div>
       <Navbar></Navbar>
       <HeaderMain></HeaderMain>
-      {/* <BusinessInfo></BusinessInfo> */}
     </div>
   );
 };
