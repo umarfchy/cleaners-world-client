@@ -18,7 +18,6 @@ const PaymentPage = () => {
     };
 
     //sending book info to the backend server
-    // const databaseUrl = `https://blueberry-tart-01004.herokuapp.com/addBook`;
     const databaseUrl = "#";
     fetch(databaseUrl, {
       method: "POST",
@@ -36,23 +35,6 @@ const PaymentPage = () => {
       .catch(err => console.log(err));
 
     reset();
-  };
-
-  const handleImageUpload = event => {
-    const imageData = new FormData();
-    imageData.set("key", "cf51017bd5120601f73b9b13098c1644");
-    imageData.append("image", event.target.files[0]);
-
-    // const imageBBapi = "https://api.imgbb.com/1/upload";
-    const imageBBapi = "#";
-    // sending img data to server and getting live url
-    axios
-      .post(imageBBapi, imageData)
-      .then(function (response) {
-        const imgLiveUrl = response.data.data.display_url;
-        setImgUrl(imgLiveUrl);
-      })
-      .catch(err => console.log(err));
   };
 
   return (
