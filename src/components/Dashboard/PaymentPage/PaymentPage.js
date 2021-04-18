@@ -62,6 +62,7 @@ const PaymentPage = () => {
           Payment
         </h3>
         <fieldset disabled>
+          {/* input details would be same as login details */}
           <input
             className="form-control mb-3"
             name="payerName"
