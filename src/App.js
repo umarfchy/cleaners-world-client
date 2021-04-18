@@ -6,6 +6,9 @@ import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import PaymentPage from "./components/Dashboard/PaymentPage/PaymentPage";
 import Home from "./components/Home/Home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import LoginFirebase from "./components/LoginFirebase/LoginFirebase";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Admin from "./components/Admin/Admin/Admin";
 
 export const UserContext = createContext();
 
@@ -19,28 +22,32 @@ function App() {
 
   return (
     <div className="App">
-      <Home></Home>
-      <Dashboard></Dashboard>
-      <CustomerReview></CustomerReview>
-      <PaymentPage></PaymentPage>
-      <AddService></AddService>
-
       <div className="App">
         <UserContext.Provider value={[user, setUser]}>
           <Router>
             <Switch>
               <Route exact path="/">
-                <Homepage></Homepage>
+                <Home></Home>
               </Route>
               <Route path="/login">
                 <LoginFirebase></LoginFirebase>
               </Route>
               <PrivateRoute path="/admin">
-                <AdminArea></AdminArea>
+                <Admin></Admin>
               </PrivateRoute>
-              <PrivateRoute path="/checkout">
-                <Checkout></Checkout>
+              <PrivateRoute path="/payment">
+                <PaymentPage></PaymentPage>
               </PrivateRoute>
+              <PrivateRoute path="/addreview">
+                <CustomerReview></CustomerReview>
+              </PrivateRoute>
+              <PrivateRoute path="/addservice">
+                <AddService></AddService>
+              </PrivateRoute>
+              <PrivateRoute path="/dashboard">
+                <Dashboard></Dashboard>
+              </PrivateRoute>
+
               <Route path="/*">
                 <div>
                   <h1>Nothing was found</h1>
