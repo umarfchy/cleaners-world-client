@@ -19,13 +19,11 @@ const AddService = () => {
       serviceDesc: data.serviceDesc,
       servicePrice: data.servicePrice,
     };
-
     //sending book info to the backend server
     // const databaseUrl =
     //   "https://desolate-ravine-27656.herokuapp.com/addService";
 
     const databaseUrl = "http://localhost:5000/addService";
-
     const formData = new FormData();
     formData.append("file", file);
     formData.append("title", serviceData.serviceTitle);
@@ -40,10 +38,10 @@ const AddService = () => {
       .then(data => {
         console.log(data);
         alert("Submission complete");
-        console.log(
-          "Following book info is added to the server : ",
-          data.ops[0]
-        );
+        // console.log(
+        //   "Following book info is added to the server : ",
+        //   data.ops[0]
+        // );
       })
       .catch(error => {
         console.error(error);
@@ -87,7 +85,6 @@ const AddService = () => {
           className="form-control mb-3"
           name="uploadedImage"
           type="file"
-          {...register("", { required: true })}
         />
 
         <input
