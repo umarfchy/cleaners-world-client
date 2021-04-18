@@ -49,6 +49,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item ms-5">
+              <Link to="/dashboard" className="nav-link" href="#">
+                Dashboard
+              </Link>
+            </li>
+            <li className="nav-item ms-5">
               <Link to="/" className="nav-link" href="#">
                 Contact Us
               </Link>
