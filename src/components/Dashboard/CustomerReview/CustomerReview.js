@@ -1,57 +1,50 @@
 import React, { useState } from "react";
-import { set, useForm } from "react-hook-form";
-import axios from "axios";
+import { useForm } from "react-hook-form";
 
 const CustomerReview = () => {
   const { register, handleSubmit, reset } = useForm();
-  const [imgUrl, setImgUrl] = useState(null);
+  const [file, setFile] = useState(null);
+
+  const handleFileChange = e => {
+    const newFile = e.target.files[0];
+    setFile(newFile);
+  };
 
   //actions on submitting the form
-  const onSubmit = data => {
-    const bookData = {
-      bookName: data.bookName,
-      authorName: data.authorName,
-      price: data.price,
-      imgUrl: imgUrl,
-    };
 
+  const onSubmit = data => {
+    const reviewData = {
+      reviewerName: data.reviewerName,
+      reviewerCompany: data.reviewerCompany,
+      reviewDesc: data.reviewDesc,
+    };
     //sending book info to the backend server
-    // const databaseUrl = `https://blueberry-tart-01004.herokuapp.com/addBook`;
-    const databaseUrl = "#";
+    const databaseUrl = "https://desolate-ravine-27656.herokuapp.com/addReview";
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("name", reviewData.reviewerName);
+    formData.append("company", reviewData.reviewerCompany);
+    formData.append("review", reviewData.reviewDesc);
+
     fetch(databaseUrl, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(bookData),
+      body: formData,
     })
-      .then(res => res.json())
-      .then(resData => {
+      .then(response => response.json())
+      .then(data => {
         alert("Submission complete");
         console.log(
           "Following book info is added to the server : ",
-          resData.ops[0]
+          data.ops[0]
         );
       })
-      .catch(err => console.log(err));
+      .catch(error => {
+        console.error(error);
+      });
 
     reset();
   };
 
-  const handleImageUpload = event => {
-    const imageData = new FormData();
-    imageData.set("key", "cf51017bd5120601f73b9b13098c1644");
-    imageData.append("image", event.target.files[0]);
-
-    // const imageBBapi = "https://api.imgbb.com/1/upload";
-    const imageBBapi = "#";
-    // sending img data to server and getting live url
-    axios
-      .post(imageBBapi, imageData)
-      .then(function (response) {
-        const imgLiveUrl = response.data.data.display_url;
-        setImgUrl(imgLiveUrl);
-      })
-      .catch(err => console.log(err));
-  };
   return (
     //adds review to db on submit
     <div className="w-75 mx-auto">
@@ -83,12 +76,12 @@ const CustomerReview = () => {
           {...register("reviewDesc", { required: true })}
         />
 
-        {/* <input
+        <input
           className="form-control mb-3"
           name="uploadedImage"
           type="file"
-          onChange={handleImageUpload}
-        /> */}
+          onChange={handleFileChange}
+        />
 
         <input
           className="btn btn-success col-md-2"

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-// import axios from "axios";
 
 const AddService = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -20,10 +19,8 @@ const AddService = () => {
       servicePrice: data.servicePrice,
     };
     //sending book info to the backend server
-    // const databaseUrl =
-    //   "https://desolate-ravine-27656.herokuapp.com/addService";
-
-    const databaseUrl = "http://localhost:5000/addService";
+    const databaseUrl =
+      "https://desolate-ravine-27656.herokuapp.com/addService";
     const formData = new FormData();
     formData.append("file", file);
     formData.append("title", serviceData.serviceTitle);
@@ -36,12 +33,11 @@ const AddService = () => {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         alert("Submission complete");
-        // console.log(
-        //   "Following book info is added to the server : ",
-        //   data.ops[0]
-        // );
+        console.log(
+          "Following book info is added to the server : ",
+          data.ops[0]
+        );
       })
       .catch(error => {
         console.error(error);
