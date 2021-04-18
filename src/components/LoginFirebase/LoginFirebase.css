@@ -1,0 +1,49 @@
+#leftHr, #rightHr{
+    display: inline-block;
+    align-items: center;
+    width: 8rem;
+}
+
+.firebaseSignUp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    height: 3rem;
+    width: 23rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.googleSignUp{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 20rem;
+    background: #FFFFFF;
+    border: 0.1rem solid #C7C7C7;
+    box-sizing: border-box;
+    border-radius: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.googleSignUp > img{
+    height: 75%;
+    margin-right: auto;
+    margin-left: 0.5rem;
+}
+
+.googleSignUp > p{
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+#hrDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
