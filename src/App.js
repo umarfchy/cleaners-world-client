@@ -1,6 +1,5 @@
 import "./App.css";
 import { createContext, useState } from "react";
-import AddService from "./components/Admin/AddService/AddService";
 import CustomerReview from "./components/Dashboard/CustomerReview/CustomerReview";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import PaymentPage from "./components/Dashboard/PaymentPage/PaymentPage";
@@ -40,9 +39,6 @@ function App() {
               </PrivateRoute>
               <PrivateRoute path="/addreview">
                 <CustomerReview></CustomerReview>
-              </PrivateRoute>
-              <PrivateRoute path="/addservice">
-                <AddService></AddService>
               </PrivateRoute>
               <PrivateRoute path="/dashboard">
                 <Dashboard></Dashboard>

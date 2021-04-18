@@ -1,11 +1,11 @@
 import React from "react";
-import Sidebar from "../Sidebar/Sidebar";
+import CustomerReview from "../CustomerReview/CustomerReview";
 
 const Dashboard = () => {
   return (
-    <div>
-      <Sidebar></Sidebar>
-    </div>
+    <>
+      <CustomerReview></CustomerReview>
+    </>
   );
 };
 

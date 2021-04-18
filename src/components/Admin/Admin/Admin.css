@@ -1,0 +1,53 @@
+.adminArea {
+  display: flex;
+}
+
+.leftBar {
+  background: rgba(32, 35, 206, 0.589);
+  height: 100vh;
+  width: 20vw;
+  color: white;
+}
+
+.leftBar > p {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.leftBar > ul {
+  margin-top: 4rem;
+}
+
+.leftBar > ul > li {
+  list-style: none;
+  width: 70%;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  cursor: pointer;
+}
+
+.leftBar > ul > li > a {
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+}
+
+.leftBar > ul > li:hover {
+  background: rgba(32, 35, 206, 0.89);
+}
+
+.leftBar > ul > li > img {
+  width: 1.2rem;
+  margin-right: 1rem;
+  display: inline;
+}
+
+.rightShowcase {
+  width: 80vw;
+  padding: 2rem;
+}
