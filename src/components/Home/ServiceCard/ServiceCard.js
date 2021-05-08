@@ -19,9 +19,15 @@ const ServiceCard = props => {
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title">{info.title}</h5>
-        <p class="card-text">${info.price}</p>
-        <p class="card-text">{info.desc}</p>
+        <div
+          style={{
+            height: "10rem",
+          }}
+        >
+          <h5 class="card-title">{info.title}</h5>
+          <p class="card-text">${info.price}</p>
+          <p class="card-text">{info.desc}</p>
+        </div>
         <button onClick={handlePurchase} class="btn btn-dark">
           Purchase
         </button>
