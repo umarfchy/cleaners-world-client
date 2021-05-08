@@ -51,7 +51,7 @@ const Footer = () => {
             </ul>
             <div className="mt-5">
               <h6>Call now</h6>
-              <button className="btn btn-secondary">+08801712346789</button>
+              <button className="btn btn-secondary">+8801521203263</button>
             </div>
           </FooterCol>
         </div>
