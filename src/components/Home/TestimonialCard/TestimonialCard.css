@@ -1,19 +1,20 @@
 .testimonialCardStyle {
   margin: 0.5rem 0.5rem;
   border: none;
-  width: 12rem;
+  width: 10rem;
 }
 
 .testimonialCardBody {
   border: 0.01rem solid silver;
   border-radius: 0.5rem;
   margin-top: 0.5rem;
+  text-align: center;
 }
 
 .testimonialCardImage {
   display: block;
   margin: 0 auto 0.2rem auto;
-  width: 50%;
+  width: 5rem;
   border-radius: 50%;
   display: grid;
   place-items: center;
