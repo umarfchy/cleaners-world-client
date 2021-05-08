@@ -25,7 +25,7 @@ const PaymentPage = () => {
     };
 
     // sending purchase info to the backend server
-    const databaseUrl = "http://localhost:5000/order";
+    const databaseUrl = "https://desolate-ravine-27656.herokuapp.com/order";
     fetch(databaseUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
