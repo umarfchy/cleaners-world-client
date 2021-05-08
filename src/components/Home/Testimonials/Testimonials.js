@@ -12,7 +12,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="row d-flex justify-content-center mb-5">
+    <section id="reviews" className="row d-flex justify-content-center mb-5">
       <div className="w-75 row d-flex justify-content-center">
         <h4 style={{ textAlign: "center", margin: "2rem 0" }}>
           Reviews from Individual Customers

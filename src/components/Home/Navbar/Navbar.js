@@ -29,14 +29,14 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item ms-5">
-              <Link to="/" className="nav-link" href="#">
+              <a className="nav-link" href="#services">
                 Our Services
-              </Link>
+              </a>
             </li>
             <li className="nav-item ms-5">
-              <Link to="/" className="nav-link" href="#">
+              <a className="nav-link" href="#reviews">
                 Reviews
-              </Link>
+              </a>
             </li>
             <li className="nav-item ms-5">
               <Link to="/admin" className="nav-link" href="#">

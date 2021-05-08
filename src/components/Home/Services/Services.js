@@ -27,7 +27,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="row d-flex justify-content-center mb-5">
+    <section id="services" className="row d-flex justify-content-center mb-5">
       <div className="w-75 row">
         <h3 style={{ textAlign: "center", margin: "2rem 0" }}>
           Services We Provide
