@@ -14,7 +14,7 @@ const PaymentPage = () => {
     userName: user.name,
     userEmail: user.email,
   };
-  console.log(register);
+
   //actions on submitting the form
   const onSubmit = data => {
     const purchaseInfo = {
