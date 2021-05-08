@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { ServiceContext } from "../../../App";
 import ServiceCard from "../ServiceCard/ServiceCard";
 

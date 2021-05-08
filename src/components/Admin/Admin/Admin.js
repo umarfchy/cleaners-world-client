@@ -6,6 +6,7 @@ import CustomerReview from "../../Dashboard/CustomerReview/CustomerReview";
 
 const Admin = () => {
   const [onPageRoute, setOnPageRoute] = useState("addService");
+  console.log("You are on admin page");
 
   return (
     <div>

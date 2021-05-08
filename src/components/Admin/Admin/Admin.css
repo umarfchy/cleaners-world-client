@@ -38,7 +38,7 @@
 }
 
 .leftBar > ul > li:hover {
-  background: rgba(32, 35, 206, 0.89);
+  background: rgba(32, 206, 125, 0.89);
 }
 
 .leftBar > ul > li > img {

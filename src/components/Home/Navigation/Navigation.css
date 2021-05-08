@@ -1,0 +1,7 @@
+.navAnchors,
+.navAnchors:visited,
+.navAnchors:hover,
+.navAnchors:active {
+  color: inherit;
+  text-decoration: none;
+}
