@@ -38,12 +38,12 @@ function App() {
               <Route path="/login">
                 <LoginFirebase></LoginFirebase>
               </Route>
-              <Route path="/payment">
+              <PrivateRoute path="/payment">
                 <PaymentPage></PaymentPage>
-              </Route>
-              <Route path="/admin">
+              </PrivateRoute>
+              <PrivateRoute path="/admin">
                 <Admin></Admin>
-              </Route>
+              </PrivateRoute>
               <PrivateRoute path="/addreview">
                 <CustomerReview></CustomerReview>
               </PrivateRoute>
