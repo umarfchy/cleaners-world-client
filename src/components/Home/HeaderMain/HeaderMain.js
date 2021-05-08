@@ -2,22 +2,33 @@ import React from "react";
 import mainImg1 from "./../../../Images/mainImg1.jpg";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useMediaQuery, useMediaQueries } from "@react-hook/media-query";
 
 const HeaderMain = () => {
+  const mobileScreen = useMediaQuery("(max-width: 480px)");
+  const clsOnMob =
+    "row d-flex align-items-center justify-content-center container mx-auto flex-column-reverse";
+  const headerTxtProperties = mobileScreen
+    ? { color: "#3a4256" }
+    : { color: "#3a4256", fontSize: "2.45rem" };
   return (
     <main
       style={{ height: "32rem" }}
-      className="row d-flex align-items-center justify-content-center"
+      className={
+        mobileScreen
+          ? clsOnMob
+          : "row d-flex align-items-center justify-content-center container mx-auto"
+      }
     >
       {/* action message info start */}
-      <div className="col-md-4 text-center ">
-        <h1 style={{ color: "#3a4256", fontSize: "2.45rem" }}>
+      <div className="col-md-6 col-sm-12 text-center ">
+        <h1 style={headerTxtProperties}>
           Your Clean Workspace
           <br />
           Our Promise!
         </h1>
         <p className="text-secondary text-justify">
-          We provide world class cleaning services. You show the space and leave
+          We provide world class cleaning services.You show the space and leave
           the rest to us.
         </p>
         <a
@@ -37,11 +48,12 @@ const HeaderMain = () => {
 
       {/* main Img info start */}
 
-      <div className="col-md-6 d-flex justify-content-center align-items-center ">
+      <div className="col-md-6 col-sm-12 d-flex justify-content-center align-items-center ">
         <img
           style={{
             borderRadius: "0.8rem",
-            width: "80%",
+            width: "90%",
+            marginBottom: "1.2rem",
           }}
           src={mainImg1}
           alt=""
