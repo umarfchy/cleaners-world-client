@@ -1,8 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router";
+import { ServiceContext } from "../../../App";
 import ServiceCard from "../ServiceCard/ServiceCard";
 
 const Services = () => {
   const [serviceData, setServiceData] = useState([]);
+  const [selectedService, setSelectedService] = useContext(ServiceContext);
+  const history = useHistory();
+
+  const handlePurchase = info => {
+    const newServiceData = {
+      ...selectedService,
+      serviceName: info.title,
+      servicePrice: info.price,
+      serviceId: info._id,
+    };
+    setSelectedService(newServiceData);
+    history.push("/payment");
+  };
+
   useEffect(() => {
     const dbDataUrl = "https://desolate-ravine-27656.herokuapp.com/services";
     fetch(dbDataUrl)
@@ -17,7 +33,12 @@ const Services = () => {
           Services We Provide
         </h3>
         {serviceData.map(info => (
-          <ServiceCard info={info}></ServiceCard>
+          <ServiceCard
+            info={info}
+            handlePurchase={() => {
+              handlePurchase(info);
+            }}
+          ></ServiceCard>
         ))}
       </div>
     </section>

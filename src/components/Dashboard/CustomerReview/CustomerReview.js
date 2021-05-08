@@ -83,11 +83,7 @@ const CustomerReview = () => {
           onChange={handleFileChange}
         />
 
-        <input
-          className="btn btn-success col-md-2"
-          id="addProductSubmitBtn"
-          type="submit"
-        />
+        <input className="btn btn-success col-md-2" type="submit" />
       </form>
     </div>
   );

@@ -1,28 +1,35 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCcMastercard } from "@fortawesome/free-brands-svg-icons";
+import { ServiceContext, UserContext } from "../../../App";
 
 const PaymentPage = () => {
   const { register, handleSubmit, reset } = useForm();
-  const [imgUrl, setImgUrl] = useState(null);
+  const [user, setUser] = useContext(UserContext);
+  const [selectedService, setSelectedService] = useContext(ServiceContext);
 
+  const newServiceData = {
+    ...selectedService,
+    userName: user.name,
+    userEmail: user.email,
+  };
+  console.log(register);
   //actions on submitting the form
   const onSubmit = data => {
-    const bookData = {
-      bookName: data.bookName,
-      authorName: data.authorName,
-      price: data.price,
-      imgUrl: imgUrl,
+    const purchaseInfo = {
+      payerName: data.payerName,
+      payerEmail: data.payerEmail,
+      selectedService: data.selectedService,
+      status: "pending",
     };
 
-    //sending book info to the backend server
-    const databaseUrl = "#";
+    // sending purchase info to the backend server
+    const databaseUrl = "http://localhost:5000/order";
     fetch(databaseUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(bookData),
+      body: JSON.stringify(purchaseInfo),
     })
       .then(res => res.json())
       .then(resData => {
@@ -45,27 +52,37 @@ const PaymentPage = () => {
         </h3>
         <fieldset disabled>
           {/* input details would be same as login details */}
+          <label className="mb-2" htmlFor="payerName">
+            Name
+          </label>
           <input
             className="form-control mb-3"
+            id="payerName"
             name="payerName"
             type="text"
-            placeholder="Name"
+            value={newServiceData.userName}
             {...register("payerName", { required: true })}
           />
-
+          <label className="mb-2" htmlFor="payerEmail">
+            Email
+          </label>
           <input
             className="form-control mb-3"
+            id="payerEmail"
             name="payerEmail"
             type="text"
-            placeholder={"Email"}
+            value={newServiceData.userEmail}
             {...register("payerEmail", { required: true })}
           />
-
+          <label className="mb-2" htmlFor="selectedService">
+            Service Name
+          </label>
           <input
             className="form-control mb-3"
+            id="selectedService"
             name="selectedService"
             type="text"
-            placeholder="Service Name"
+            value={newServiceData.serviceName}
             {...register("selectedService", { required: true })}
           />
 
@@ -99,14 +116,11 @@ const PaymentPage = () => {
           placeholder="CVC"
           {...register("payerCardCVC", { required: true })}
         />
-        <div class="form-text">You will be charged -------</div>
+        <div class="form-text">
+          You will be charged ${newServiceData.servicePrice}
+        </div>
 
-        <input
-          className="btn btn-dark mt-3"
-          id="addProductSubmitBtn"
-          type="submit"
-          value="Pay"
-        />
+        <input className="btn btn-dark mt-3" type="submit" value="Pay" />
       </form>
     </div>
   );

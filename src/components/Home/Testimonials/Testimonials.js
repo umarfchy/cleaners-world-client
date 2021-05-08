@@ -11,7 +11,6 @@ const Testimonials = () => {
       .then(data => setReviewData(data));
   }, []);
 
-  console.log(reviewData);
   return (
     <section className="row d-flex justify-content-center mb-5">
       <div className="w-75 row d-flex justify-content-center">

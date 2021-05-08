@@ -1,8 +1,10 @@
 import React from "react";
 import "./ServiceCard.css";
 
-const ServiceCard = ({ info }) => {
+const ServiceCard = props => {
+  const { info, handlePurchase } = props;
   const dbRoot = "https://desolate-ravine-27656.herokuapp.com/";
+
   return (
     <div
       class="card serviceCardStyle"
@@ -20,9 +22,9 @@ const ServiceCard = ({ info }) => {
         <h5 class="card-title">{info.title}</h5>
         <p class="card-text">${info.price}</p>
         <p class="card-text">{info.desc}</p>
-        <a href="#" class="btn btn-dark">
+        <button onClick={handlePurchase} class="btn btn-dark">
           Purchase
-        </a>
+        </button>
       </div>
     </div>
   );

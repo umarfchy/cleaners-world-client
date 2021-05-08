@@ -10,6 +10,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Admin from "./components/Admin/Admin/Admin";
 
 export const UserContext = createContext();
+export const ServiceContext = createContext();
 
 function App() {
   const [user, setUser] = useState({
@@ -18,24 +19,34 @@ function App() {
     email: "",
     password: "",
   });
-
+  const [selectedService, setSelectedService] = useState({
+    userName: "",
+    userEmail: "",
+    serviceName: "",
+    servicePrice: "",
+    serviceId: "",
+  });
   return (
     <div className="App">
       <div className="App">
         <UserContext.Provider value={[user, setUser]}>
           <Router>
             <Switch>
-              <Route exact path="/">
-                <Home></Home>
-              </Route>
-              <Route path="/login">
-                <LoginFirebase></LoginFirebase>
-              </Route>
+              <ServiceContext.Provider
+                value={[selectedService, setSelectedService]}
+              >
+                <Route exact path="/">
+                  <Home></Home>
+                </Route>
+                <Route path="/login">
+                  <LoginFirebase></LoginFirebase>
+                </Route>
+                <PrivateRoute path="/payment">
+                  <PaymentPage></PaymentPage>
+                </PrivateRoute>
+              </ServiceContext.Provider>
               <PrivateRoute path="/admin">
                 <Admin></Admin>
-              </PrivateRoute>
-              <PrivateRoute path="/payment">
-                <PaymentPage></PaymentPage>
               </PrivateRoute>
               <PrivateRoute path="/addreview">
                 <CustomerReview></CustomerReview>
@@ -43,7 +54,6 @@ function App() {
               <PrivateRoute path="/dashboard">
                 <Dashboard></Dashboard>
               </PrivateRoute>
-
               <Route path="/*">
                 <div>
                   <h1>Nothing was found</h1>
