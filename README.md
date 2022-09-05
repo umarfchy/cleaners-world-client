@@ -1,10 +1,10 @@
 # Cleaner's World
 
-This site is a fictional website about a cleaning service provider named **cleaners world**. Visit the site at https://cleaners-world.web.app/
+A fictional website about a cleaning service provider **cleaners world**. Visit the site at https://cleaners-world.web.app/
 
 The site has following features-
 
-- Frontpage UI with six individual sections.
+- Landing page UI with six individual sections.
 - NodeJS & ExpressJS to process client requests and communicate through API.
 - MongoDB as for storing and retrieving information from the database.
 - Authentication system using Firebase authentication.
